@@ -1,9 +1,9 @@
 ﻿namespace Statharas.Tools;
-public static class SingletonMaker
+public class SingletonMaker
 {
-	static Dictionary<Type, object> dict = new();
+	Dictionary<Type, object> dict = new();
 
-	public static T Singleton<T>() where T : new()
+	public T Singleton<T>() where T : new()
 	{
 
 		dict.TryGetValue(typeof(T), out var value);
